@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Claudia Ottaiano · Links</title>
+  <meta name="description" content="Dra. Claudia Ottaiano, oftalmologista especialista em pálpebras e blefaroplastia em Marília/SP. Agende sua avaliação." />
+  <meta property="og:title" content="Dra. Claudia Ottaiano · Oftalmologista" />
+  <meta property="og:description" content="Especialista em pálpebras e blefaroplastia em Marília/SP. Agende sua avaliação." />
+  <meta property="og:image" content="avatar-claudia.jpg" />
+  <link rel="icon" href="avatar-claudia.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+  <style>
+    /* Paleta da LP de blefaroplastia da Dra. Claudia */
+    :root {
+      --background: #F5F2EE;
+      --paper: #ECEBE8;
+      --foreground: #231F1E;
+      --cocoa: #3F3430;
+      --accent: #302421;
+      --accent-dark: #231F1E;
+      --blush: #D9B4A1;
+      --rose: #C7B9AB;
+      --mauve: #8F7869;
+      --muted: #8A817A;
+      --border: #DCD5CE;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Faixa no topo */
+    .ticker {
+      position: sticky; top: 0; z-index: 20;
+      overflow: hidden;
+      background: var(--accent);
+      padding: 8px 0;
+    }
+    .ticker-track { display: flex; width: max-content; animation: ticker 34s linear infinite; }
+    .ticker-group { display: flex; gap: 24px; padding-right: 24px; flex-shrink: 0; }
+    .ticker-item {
+      white-space: nowrap;
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.22em;
+      color: #fff;
+    }
+    .ticker-item span { color: var(--blush); }
+    .ticker-item .star { margin-left: 24px; }
+
+    /* Fundo */
+    .bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+      background: linear-gradient(170deg, var(--background) 0%, var(--paper) 55%, #E6DCD3 100%);
+    }
+    .blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.4; }
+    .blob-1 {
+      width: 420px; height: 420px; top: -120px; left: -110px;
+      background: radial-gradient(circle, var(--blush), #EBD5C8);
+      animation: drift1 14s ease-in-out infinite alternate;
+    }
+    .blob-2 {
+      width: 360px; height: 360px; bottom: -110px; right: -90px;
+      background: radial-gradient(circle, var(--rose), var(--mauve));
+      animation: drift2 17s ease-in-out infinite alternate;
+    }
+    .sparkle {
+      position: absolute; bottom: -10px; border-radius: 50%;
+      background: var(--blush);
+      animation: sparkle-float linear infinite;
+    }
+
+    /* Conteúdo */
+    main {
+      position: relative; z-index: 1;
+      min-height: calc(100vh - 34px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px 20px;
+    }
+    .wrap { width: 100%; max-width: 440px; display: flex; flex-direction: column; align-items: center; }
+
+    .avatar { margin-bottom: 16px; animation: fadeDown 0.8s ease both; }
+    .avatar-ring {
+      width: 118px; height: 118px; border-radius: 50%; padding: 3px;
+      background: conic-gradient(var(--background) 0%, var(--blush) 25%, var(--mauve) 50%, var(--blush) 75%, var(--background) 100%);
+      box-shadow: 0 8px 32px rgba(63, 52, 48, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1);
+      animation: spin 10s linear infinite;
+    }
+    .avatar-inner {
+      width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
+      background: var(--background);
+      animation: spin 10s linear infinite reverse;
+    }
+    .avatar-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem; font-weight: 500; line-height: 1.1;
+      letter-spacing: -0.03em; text-align: center;
+      color: var(--foreground);
+      margin-bottom: 6px;
+      animation: fadeDown 0.9s 0.1s ease both;
+    }
+    h1 em { font-style: italic; color: var(--mauve); }
+
+    .divider {
+      width: 60px; height: 2px; border-radius: 2px;
+      margin: 8px auto 16px;
+      background: linear-gradient(90deg, transparent, var(--mauve), transparent);
+      animation: fadeDown 1s 0.25s ease both;
+    }
+
+    .subtitle {
+      font-weight: 400; font-size: 0.82rem; line-height: 1.6;
+      text-transform: uppercase; letter-spacing: 0.12em; text-align: center;
+      color: var(--muted);
+      margin-bottom: 36px;
+      animation: fadeDown 1s 0.2s ease both;
+    }
+
+    .links { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+
+    .link {
+      position: relative;
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      width: 100%;
+      padding: 20px 20px 20px 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 18px rgba(63, 52, 48, 0.08);
+      color: var(--foreground);
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      animation: slideUp 0.7s ease both;
+      backdrop-filter: blur(6px);
+    }
+    .link:nth-child(2) { animation-delay: 0.45s; }
+    .link:nth-child(3) { animation-delay: 0.55s; }
+    .link:nth-child(4) { animation-delay: 0.65s; }
+    .link:hover, .link:focus-visible {
+      transform: translateY(-3px);
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(63, 52, 48, 0.15);
+      outline: none;
+    }
+    .link:active { transform: scale(0.99); }
+
+    /* Botão principal (WhatsApp), igual ao destaque da referência */
+    .link--main {
+      padding: 24px 20px 24px 24px;
+      background: var(--accent);
+      border-color: rgba(217, 180, 161, 0.5);
+      color: var(--background);
+      box-shadow: 0 4px 20px rgba(48, 36, 33, 0.3), 0 1px 4px rgba(0, 0, 0, 0.08);
+      animation: slideUp 0.7s 0.35s ease both, pulse 2.6s 1.2s ease-in-out infinite;
+    }
+    .link--main:hover, .link--main:focus-visible { background: var(--cocoa); box-shadow: 0 10px 32px rgba(48, 36, 33, 0.45); }
+
+    .badge {
+      position: absolute; top: -10px; right: 18px; z-index: 2;
+      font-size: 0.62rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.09em;
+      padding: 3px 10px; border-radius: 20px;
+      background: var(--blush); color: var(--foreground);
+      box-shadow: 0 2px 8px rgba(48, 36, 33, 0.25);
+    }
+
+    .link-text {
+      flex: 1; text-align: center;
+      font-size: 0.92rem; font-weight: 400; line-height: 1.45;
+      padding: 0 8px;
+      color: var(--muted);
+    }
+    .link-text strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem; font-weight: 600; font-style: italic;
+      color: var(--foreground);
+      margin-bottom: 2px;
+    }
+    .link--main .link-text { color: rgba(245, 242, 238, 0.82); font-size: 0.95rem; }
+    .link--main .link-text strong { color: #fff; font-size: 1.3rem; margin-bottom: 4px; }
+
+    .icon { width: 22px; height: 22px; flex-shrink: 0; color: var(--mauve); }
+    .link--main .icon { color: var(--blush); }
+    .spacer { width: 22px; flex-shrink: 0; }
+
+    footer {
+      margin-top: 36px; text-align: center;
+      font-size: 0.74rem; line-height: 1.7; letter-spacing: 0.04em;
+      color: var(--muted);
+      animation: fadeDown 1s 0.5s ease both;
+    }
+    footer em { opacity: 0.85; }
+
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    @keyframes pulse {
+      0%, 100% { scale: 1; box-shadow: 0 4px 20px rgba(48, 36, 33, 0.3), 0 0 0 0 rgba(143, 120, 105, 0); }
+      50% { scale: 1.02; box-shadow: 0 6px 24px rgba(48, 36, 33, 0.35), 0 0 0 7px rgba(143, 120, 105, 0.16); }
+    }
+    @keyframes drift1 { to { transform: translate(60px, 50px) scale(1.1); } }
+    @keyframes drift2 { to { transform: translate(-50px, -60px) scale(1.08); } }
+    @keyframes sparkle-float {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-105vh); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticker" role="marquee" aria-label="Blefaroplastia em Marília">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <div class="bg" id="bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <main>
+    <div class="wrap">
+      <div class="avatar">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <img src="avatar-claudia.jpg" alt="Dra. Claudia Ottaiano" />
+          </div>
+        </div>
+      </div>
+
+      <h1>Dra. Claudia <em>Ottaiano</em></h1>
+      <div class="divider"></div>
+      <h2 class="subtitle">Oftalmologista · Especialista em pálpebras<br />e blefaroplastia · Marília/SP</h2>
+
+      <nav class="links">
+        <a class="link link--main js-wa" href="#" data-msg="Olá, Dra. Claudia! Vim pelo Instagram e quero agendar uma avaliação.">
+          <span class="badge">Agenda aberta</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-2 1.37-.51.05-.99.23-3.35-.7-2.83-1.11-4.62-4.01-4.76-4.2-.14-.18-1.14-1.51-1.14-2.89 0-1.37.72-2.05.98-2.33.25-.28.55-.35.74-.35l.53.01c.17.01.4-.06.62.48.23.55.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.28.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.18.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></svg>
+          <span class="link-text">
+            <strong>Agende sua avaliação</strong>
+            Fale com a equipe pelo WhatsApp
+          </span>
+          <span class="spacer" aria-hidden="true"></span>
+        </a>
+
+        <a class="link js-lp" href="#" data-anchor="">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="link-text">
+            <strong>Blefaroplastia</strong>
+            Como funciona a cirurgia das pálpebras
+          </span>
+          <span class="spacer" aria-hidden="true"></span>
+        </a>
+
+        <a class="link js-lp" href="#" data-anchor="#laser">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="2.5"/></svg>
+          <span class="link-text">
+            <strong>Laser de CO2</strong>
+            Rejuvenescimento da região dos olhos
+          </span>
+          <span class="spacer" aria-hidden="true"></span>
+        </a>
+
+        <a class="link js-lp" href="#" data-anchor="#duvidas">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.2-2.5 3.8"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+          <span class="link-text">
+            <strong>Dúvidas frequentes</strong>
+            Recuperação, resultado e cuidados
+          </span>
+          <span class="spacer" aria-hidden="true"></span>
+        </a>
+      </nav>
+
+      <footer>
+        Dra. Claudia Ottaiano · CRM-SP 130805 · RQE 76450<br />
+        <em>© 2026 · Marília/SP</em>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    /* ===== EDITE AQUI ===== */
+    const WHATSAPP = '5514996010011';
+    // Endereço onde a LP de blefaroplastia estiver publicada:
+    const LP_URL = 'https://SEU-DOMINIO.com.br/blefaroplastia/';
+    /* ====================== */
+
+    document.querySelectorAll('.js-wa').forEach((a) => {
+      a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(a.dataset.msg || 'Olá!');
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+    });
+    document.querySelectorAll('.js-lp').forEach((a) => {
+      a.href = LP_URL + (a.dataset.anchor || '');
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+    });
+
+    // Faixa: dois grupos idênticos para o loop contínuo
+    const item = '<span class="ticker-item">Blefaroplastia em <span>Marília</span><span class="star">✦</span></span>';
+    const group = (hidden) => `<div class="ticker-group"${hidden ? ' aria-hidden="true"' : ''}>${item.repeat(10)}</div>`;
+    document.getElementById('ticker').innerHTML = group(false) + group(true);
+
+    // Brilhos subindo
+    const bg = document.getElementById('bg');
+    for (let i = 0; i < 14; i++) {
+      const s = document.createElement('div');
+      const size = 3 + Math.random() * 4 + 'px';
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.width = size;
+      s.style.height = size;
+      s.style.animationDuration = 8 + Math.random() * 12 + 's';
+      s.style.animationDelay = Math.random() * 10 + 's';
+      s.style.opacity = String(0.3 + Math.random() * 0.4);
+      bg.appendChild(s);
+    }
+  </script>
+</body>
+</html>
